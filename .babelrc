@@ -1,0 +1,27 @@
+{
+	"presets": [
+		"env",		
+		"react"
+	],
+	"plugins": [
+		"react-hot-loader/babel",
+		"transform-object-rest-spread",
+		"transform-class-properties",
+		"transform-runtime"
+	],
+	"env": {
+		"test": {
+			"plugins": [
+				[
+					"istanbul",
+					{
+						"exclude": [
+							"test/unit/**/*.js",
+							"test/unit/**/*.jsx"
+						]
+					}
+				]
+			]
+		}
+	}
+}

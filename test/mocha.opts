@@ -1,0 +1,8 @@
+--recursive
+--colors
+--reporter spec
+--inline-diffs   
+--growl
+--compilers js:babel-core/register
+--require test/unit/setup.js
+test/unit/**/*.{js,jsx}

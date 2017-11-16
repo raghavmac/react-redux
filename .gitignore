@@ -1,0 +1,17 @@
+# Node Modules Directory
+node_modules/
+
+# Bundle Directory
+dist/
+
+# Coverage
+coverage/
+
+# Reports
+reports/
+
+# Test cache
+.nyc_output/
+
+# VS Code Editor
+.vscode/
