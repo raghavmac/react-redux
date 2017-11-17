@@ -1,21 +1,27 @@
 import { connect } from 'react-redux';
 import App from '../components/App';
-import actions from '../actions/actionCreators';
+import actions from '../actions/users';
+import { getSuggestions } from '../actions/suggestions';
 
 const mapStateToProps = state => ({
-  user: state.actionReducer.user,
-  value: state.actionReducer.value,
+  users: state.users.users,
+  isFetching: state.suggestions.isFetching,
+  suggestion: state.suggestions.suggestion,
+  error: state.suggestions.error,
 });
 
 const mapDispatchToProps = dispatch => ({
   addUser: (user) => {
     dispatch(actions.addUser(user));
   },
-  increment: () => {
-    dispatch(actions.incrementAction());
+  increment: (id) => {
+    dispatch(actions.incrementAction(id));
   },
-  decrement: () => {
-    dispatch(actions.decrementAction());
+  decrement: (id) => {
+    dispatch(actions.decrementAction(id));
+  },
+  getSuggestion: () => {
+    dispatch(getSuggestions());
   },
 });
 

@@ -12,6 +12,10 @@ class Create extends React.Component {
     this.onClick = this.onClick.bind(this);
   }
 
+  componentWillReceiveProps(props) {
+    this.setState({ value: props.suggestion });
+  }
+
   onChange(event) {
     this.setState({ value: event.target.value });
   }
@@ -25,19 +29,42 @@ class Create extends React.Component {
     return (
       <div>
         <Input
+          loading={this.props.isFetching}
+          iconPosition="left"
+          size="small"
           label={<Button onClick={this.onClick}>Add User</Button>}
           labelPosition="right"
           placeholder="Username"
           value={this.state.value}
           onChange={this.onChange}
+          disabled={this.props.isFetching}
         />
+        <Button
+          size="small"
+          color="grey"
+          onClick={this.props.getSuggestion}
+          style={{ marginLeft: '5px' }}
+        >
+          {this.props.error ? 'Try Again' : 'Get Suggestion'}
+        </Button>
       </div>
     );
   }
 }
 
+Create.defaultProps = {
+  getSuggestion: () => {},
+  isFetching: false,
+  suggestion: '',
+  error: false,
+};
+
 Create.propTypes = {
   addUser: PropTypes.func.isRequired,
+  getSuggestion: PropTypes.func,
+  isFetching: PropTypes.bool,
+  suggestion: PropTypes.string,
+  error: PropTypes.bool,
 };
 
 export default Create;

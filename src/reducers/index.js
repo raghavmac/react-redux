@@ -1,8 +1,10 @@
 import { combineReducers } from 'redux';
-import actionReducer from './actionReducer';
+import users from './users';
+import suggestions from './suggestions';
 
 const reducers = combineReducers({
-  actionReducer,
+  users,
+  suggestions,
 });
 
 export default reducers;
