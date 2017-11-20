@@ -9,7 +9,7 @@ A sample react-redux source.
 ## Install
 
 ```sh
-git clone <<git url>>
+git clone https://github.com/raghavmac/react-redux.git
 npm install
 ```
 or `yarn install` as alternative
