@@ -27,6 +27,15 @@ export function showError() {
   };
 }
 
+export function clear() {
+  return {
+    type: actions.SUGGESTION_CLEAR,
+    payload: {
+      isFetching: false,
+    },
+  };
+}
+
 export function getSuggestions() {
   return (dispatch) => {
     dispatch(showProgress());

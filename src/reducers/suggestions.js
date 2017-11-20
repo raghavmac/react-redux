@@ -24,6 +24,12 @@ const reducer = (state = defaultState, action) => {
         isFetching: action.payload.isFetching,
         error: action.payload.error,
       };
+    case actions.SUGGESTION_CLEAR:
+      return {
+        ...state,
+        isFetching: action.payload.isFetching,
+        suggestion: '',
+      };
     default:
       return { ...state };
   }

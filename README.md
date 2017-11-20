@@ -1,6 +1,6 @@
 # react-redux
 
-A sample react-redux source.
+A sample react-redux source. I believe this covers both plain logic for utility kinda apps and also API part of it. Happy hacking!
 
 ## Requirements
 

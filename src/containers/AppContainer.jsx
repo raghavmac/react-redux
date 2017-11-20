@@ -1,7 +1,7 @@
 import { connect } from 'react-redux';
 import App from '../components/App';
 import actions from '../actions/users';
-import { getSuggestions } from '../actions/suggestions';
+import { getSuggestions, clear } from '../actions/suggestions';
 
 const mapStateToProps = state => ({
   users: state.users.users,
@@ -22,6 +22,9 @@ const mapDispatchToProps = dispatch => ({
   },
   getSuggestion: () => {
     dispatch(getSuggestions());
+  },
+  clearSuggestion: () => {
+    dispatch(clear());
   },
 });
 

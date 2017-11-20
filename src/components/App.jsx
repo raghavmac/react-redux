@@ -11,7 +11,7 @@ const App = props => (
       <Header as="h3">Redux Users</Header>
     </Container>
     <Grid centered columns={6}>
-      <Grid.Row columns={4}>
+      <Grid.Row columns={5}>
         <Grid.Column>
           <Segment padded>
             <Create {...props} />

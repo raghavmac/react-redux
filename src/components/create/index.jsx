@@ -21,8 +21,10 @@ class Create extends React.Component {
   }
 
   onClick() {
-    this.props.addUser(this.state.value);
-    this.setState({ value: '' });
+    if (this.state.value.length) {
+      this.props.addUser(this.state.value);
+      this.props.clearSuggestion();
+    }
   }
 
   render() {
@@ -54,6 +56,7 @@ class Create extends React.Component {
 
 Create.defaultProps = {
   getSuggestion: () => {},
+  clearSuggestion: () => {},
   isFetching: false,
   suggestion: '',
   error: false,
@@ -62,6 +65,7 @@ Create.defaultProps = {
 Create.propTypes = {
   addUser: PropTypes.func.isRequired,
   getSuggestion: PropTypes.func,
+  clearSuggestion: PropTypes.func,
   isFetching: PropTypes.bool,
   suggestion: PropTypes.string,
   error: PropTypes.bool,
