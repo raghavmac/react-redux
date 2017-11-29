@@ -1,4 +1,4 @@
-import actions from '../constants/suggestions';
+import types from '../constants/suggestions';
 
 const defaultState = {
   isFetching: false,
@@ -7,24 +7,24 @@ const defaultState = {
 
 const reducer = (state = defaultState, action) => {
   switch (action.type) {
-    case actions.SUGGESTION_FETCHING:
+    case types.SUGGESTION_FETCHING:
       return {
         ...state,
         isFetching: action.payload.isFetching,
       };
-    case actions.SUGGESTION_SUCCESS:
+    case types.SUGGESTION_SUCCESS:
       return {
         ...state,
         isFetching: action.payload.isFetching,
         suggestion: action.payload.suggestion,
       };
-    case actions.SUGGESTION_ERROR:
+    case types.SUGGESTION_ERROR:
       return {
         ...state,
         isFetching: action.payload.isFetching,
         error: action.payload.error,
       };
-    case actions.SUGGESTION_CLEAR:
+    case types.SUGGESTION_CLEAR:
       return {
         ...state,
         isFetching: action.payload.isFetching,

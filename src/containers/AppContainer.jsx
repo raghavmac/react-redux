@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import App from '../components/App';
-import actions from '../actions/users';
+import { addUser, increment, decrement } from '../actions/users';
 import { getSuggestions, clear } from '../actions/suggestions';
 
 const mapStateToProps = state => ({
@@ -12,13 +12,13 @@ const mapStateToProps = state => ({
 
 const mapDispatchToProps = dispatch => ({
   addUser: (user) => {
-    dispatch(actions.addUser(user));
+    dispatch(addUser(user));
   },
   increment: (id) => {
-    dispatch(actions.incrementAction(id));
+    dispatch(increment(id));
   },
   decrement: (id) => {
-    dispatch(actions.decrementAction(id));
+    dispatch(decrement(id));
   },
   getSuggestion: () => {
     dispatch(getSuggestions());

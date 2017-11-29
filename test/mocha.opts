@@ -3,6 +3,6 @@
 --reporter spec
 --inline-diffs   
 --growl
---compilers js:babel-core/register
+--require jsdom-global/register
 --require test/unit/setup.js
-test/unit/**/*.{js,jsx}
+test/unit/**/*.test.{js,jsx}

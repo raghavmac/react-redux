@@ -1,0 +1,16 @@
+{
+  "extends": "airbnb",
+  "plugins": [
+      "react",
+      "jsx-a11y",
+      "import"
+  ],
+  "env": {
+      "mocha": true
+  },
+  "rules": {
+      "no-unused-expressions": "off",
+      "linebreak-style": 0,
+      "import/no-extraneous-dependencies": 0
+  }
+}

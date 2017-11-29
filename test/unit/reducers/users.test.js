@@ -1,5 +1,5 @@
 import { expect } from 'chai';
-import reducer from '../../../src/reducers/actionReducer';
+import reducer from '../../../src/reducers/users';
 
 describe('Testing Action Reducer', () => {
   describe('Default State Tests', () => {

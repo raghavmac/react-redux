@@ -1,33 +1,30 @@
-import actions from '../constants/users';
+import types from '../constants/users';
 
 let userId = 0;
-const addUser = name => (dispatch) => {
-  dispatch({
-    type: actions.ADD_USER,
+const addUser = (name) => {
+  userId += 1;
+  return {
+    type: types.ADD_USER,
     user: {
-      id: userId += 1,
+      id: userId,
       name,
       value: 0,
     },
-  });
+  };
 };
 
-const incrementAction = id => (dispatch) => {
-  dispatch({
-    type: actions.INCREMENT,
-    id
-  });
-};
+const increment = id => ({
+  type: types.INCREMENT,
+  id
+});
 
-const decrementAction = id => (dispatch) => {
-  dispatch({
-    type: actions.DECREMENT,
-    id
-  });
-};
+const decrement = id => ({
+  type: types.DECREMENT,
+  id
+});
 
-export default {
+export {
   addUser,
-  incrementAction,
-  decrementAction,
+  increment,
+  decrement,
 };
